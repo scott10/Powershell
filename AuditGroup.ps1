@@ -11,11 +11,11 @@ $added = $added | Out-String
 $removed = $removed | Out-String
  
 If ((($added).Length) -eq 0 -and (($removed).Length) -eq 0) {
-    Write-EventLog -LogName Application -Source "Lumic"  -EntryType Information -EventId 696 -Message 'Domain Admins: No Changes Detected in Group Memembership'
+    Write-EventLog -LogName Application -Source "XXX"  -EntryType Information -EventId 696 -Message 'Domain Admins: No Changes Detected in Group Memembership'
     Exit
 }
 Else {
-Write-EventLog -LogName Application -Source "Lumic"  -EntryType Information -EventId 696 -Message "Domain Admins: Changes Detected in Group Memembership: Users added: $added. Users Removed $removed"
+Write-EventLog -LogName Application -Source "XXX"  -EntryType Information -EventId 696 -Message "Domain Admins: Changes Detected in Group Memembership: Users added: $added. Users Removed $removed"
 Remove-item 'c:\temp\DOMAdmin_Base.txt' -force
 Rename-item 'c:\temp\DOMAdmin.txt' -NewName 'DOMAdmin_Base.txt'
 
